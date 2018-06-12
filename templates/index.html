@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<title>Sentiment Analysis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='static/Chart.min.js'></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+input[type=text] {
+width: 30%;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+background-position: 10px 10px;
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+}
+input[type=button], input[type=submit] {
+background-color: black;
+border: none;
+color: white;
+text-decoration: none;
+padding: 6px;
+padding-left: 15px;
+padding-right: 15px;
+cursor: pointer;
+}
+
+
+
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+
+  <span class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-theme-d4 "><img src="static/images/sa.jpg" class="w3-circle" style="height:23px;width:33px" alt="Avatar">
+    Customer Feedback and Sentiment Analysis</span>
+
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-button"> User A mailed you</a>
+<a href="#" class="w3-bar-item w3-button"> User B mailed you</a>
+    </div>
+  </div>
+    <span class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-none"  id="google" title="Translate" ></span>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google');
+  }
+  </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <a href="/map1 " target="_blank" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"  title="Map"><i class="fa fa-globe"></i>&nbsp;Map</a>
+<a href="/" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"  title="Logout"><i class="fa fa-home"></i>&nbsp;Logout</a>
+ </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+
+    <div class="w3-col m3" >
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white w3-padding-14 w3-center" style="padding:11px;">
+        <p><h3>Statistics</h3></p>
+      </div>
+      <br>
+
+      <div class="w3-card w3-round w3-white" >
+        <div class="w3-container">
+         <h4 class="w3-center">Pie Chart</h4>
+         <p class="w3-center">
+           <canvas id="chart" width="400" height="200" ></canvas>
+           <script>
+              var pieData = [
+                       {% for item,label,colors in set %}
+                           {
+                               value: {{item}},
+                               label: "{{label}}",
+                               color : "{{colors}}"
+                           },
+                           {% endfor %}
+
+
+                    ];
+
+              // get bar chart canvas
+              var mychart = document.getElementById("chart").getContext("2d");
+
+              steps = 10
+              max = 10
+              // draw pie chart
+              new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
+
+           </script>
+
+
+
+        </p>
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">Bar Graph </h4>
+         <p class="w3-center">
+           <canvas id="chart1" width="300" height="200"></canvas>
+           <script>
+              // bar chart data
+
+
+              var barData = {
+              labels : [{% for item in labels %}
+                             "{{item}}",
+                         {% endfor %}],
+              datasets : [
+                 {
+                       fillColor: "rgba(151,187,205,0.2)",
+                       strokeColor: "rgba(151,187,205,1)",
+                       pointColor: "rgba(151,187,205,1)",
+                    data : [{% for item in values %}
+                                 {{item}},
+                               {% endfor %}]
+                 }
+                 ]
+              }
+
+              // get bar chart canvas
+              var mychart = document.getElementById("chart1").getContext("2d");
+
+              steps = 10
+              max = 100
+              // draw bar chart
+              new Chart(mychart).Bar(barData, {
+                   scaleOverride: true,
+                   scaleSteps: steps,
+                   scaleStepWidth: Math.ceil(max / steps),
+                   scaleStartValue: 0,
+                   scaleShowVerticalLines: true,
+                   scaleShowGridLines : true,
+                   barShowStroke : true,
+                   scaleShowLabels: true
+              });
+
+           </script>
+
+       <br>
+        </p>
+        </div>
+      </div>
+      <br>
+
+
+
+      <!-- Interests -->
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Top words</p>
+          <p>
+            {% for top in top_words %}
+            <span class="w3-tag w3-small w3-theme-d5">{{ top }}</span>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>Welcome to our Sentiment Analsysis tool</p>
+      </div>
+
+    <!-- End Left Column -->
+    </div>
+  
+
+<script>
+    function showPositive() {
+   document.getElementById('negative').style.display = "none";
+   document.getElementById('neutral').style.display = "none";
+   document.getElementById('positive').style.display = "block";
+}
+
+function showNegative() {
+document.getElementById('positive').style.display = "none";
+document.getElementById('neutral').style.display = "none";
+document.getElementById('negative').style.display = "block";
+}
+
+function showNeutral() {
+document.getElementById('positive').style.display = "none";
+document.getElementById('negative').style.display = "none";
+document.getElementById('neutral').style.display = "block";
+}
+
+function showAll() {
+document.getElementById('positive').style.display = "block";
+document.getElementById('negative').style.display = "block";
+document.getElementById('neutral').style.display = "block";
+}
+
+function topic_name() {
+document.getElementById('spin').style.display = "block";
+document.getElementById('topic').style.display = "none";
+}
+
+</script>
+
+
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h6 class="w3-center">
+              <form method="POST" action="/index">
+              <i class="fa fa-search"></i>   <input type="text" name="topic" placeholder="Enter Keyword">
+                <input class="w3-button w3-theme-d1 w3-margin-center" type="submit" value="Search" onclick="topic_name()"></h6>
+              </form>
+            <div id="spin" class="w3-center" style="display:none;"> <h1><i class="fa fa-spinner fa-pulse" ></i></h1> </div>
+            <div style="padding-left:250px;padding-top:8px;display:block;" id="topic">  Showing results for &nbsp; <sup><i class="fa fa-quote-left fa-1x"></i></sup><b> {{ topic }} </b> <sup><i class="fa fa-quote-right fa-1x "></i></sup> </div>
+            <br>
+            <div style="padding-left:140px;">
+            <input type="button" class="w3-button w3-theme-d1 w3-margin-center" name="Show Positive" value="Show Positive" onclick="showPositive()" />
+              <input type="button" class="w3-button w3-theme-d1 w3-margin-center" name="Show Negative" value="Show Negative" onclick="showNegative()" />
+              <input type="button"class="w3-button w3-theme-d1 w3-margin-center"  name="Show Neutral" value="Show Neutral" onclick="showNeutral()" />
+              <input type="button"class="w3-button w3-theme-d1 w3-margin-center"  name="All" value="All" onclick="showAll()" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="negative">
+      {% set count1 = [0] %}
+      {% for sentiment_text1_element in sentiment_text1 %}
+      <div class="w3-container w3-card w3-white w3-round w3-margin" style="display:block;"><br>
+        <div style="background:	 #ffebe6;padding-top:10px;padding-left:10px;padding-right:10px;padding-bottom:2px;">
+        <img src="{{ image1[count1[0]] }}" alt="Smiley face" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span  class="w3-right w3-opacity">{{ creationdate1[count1[0]] }}</span>
+        <h5 ><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/status/{{ tweet_id1[count1[0]] }}">   {{ user_name1[count1[0]] }} </a></h5>
+        <span class="w3-right w3-opacity">Polarity : {{ polarity1[count1[0]]*100 }}%</span>
+
+        <hr class="w3-clear">
+      </div>
+        <p>{{ sentiment_text1_element }}</p>
+        <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/status/{{ tweet_id1[count1[0]] }}"><i class="fa fa-heart"></i> Likes - {{ favourite_count1[count1[0]] }}</a></b> </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/status/{{ tweet_id1[count1[0]] }}"><i class="fa fa-retweet"></i>  Retweets - {{ retweets_count1[count1[0]] }}</a> </b></button>
+        <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b> <a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/followers"> Followers - {{ follower_count1[count1[0]] }} </a></b> </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b> <a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/following">Following - {{ following_count1[count1[0]] }}</a> </b> </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name1[count1[0]] }}/status/{{ tweet_id1[count1[0]] }}"><i class="fa fa-envelope"></i> &nbsp;Direct Message </a></b> </button>
+          {% if count1.append(count1.pop() + 1) %} {% endif %}
+    </div>
+        {% endfor %}
+      </div>
+
+
+
+      <div id="positive">
+        {% set count0 = [0] %}
+        {% for sentiment_text0_element in sentiment_text0 %}
+        <div class="w3-container w3-card w3-white w3-round w3-margin"  style="display:block;"><br>
+            <div style="background:#e6ffee;padding-top:10px;padding-left:10px;padding-right:10px;padding-bottom:2px;">
+          <img src="{{ image0[count0[0]] }}" alt="Smiley face" class="w3-left w3-circle w3-margin-right" style="width:60px">
+          <span  class="w3-right w3-opacity">{{ creationdate0[count0[0]] }}</span>
+          <h5 ><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/status/{{ tweet_id0[count0[0]] }}">    {{ user_name0[count0[0]] }} </a></h5>
+          <span class="w3-right w3-opacity">Polarity : {{ polarity0[count0[0]]*100 }}%</span>
+
+        <!--  <hr class="w3-clear">-->
+        </div>
+          <p>{{ sentiment_text0_element }}</p>
+          <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/status/{{ tweet_id0[count0[0]] }}"><i class="fa fa-heart"></i> Likes - {{ favourite_count0[count0[0]] }}</a></b></button>
+          <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/status/{{ tweet_id0[count0[0]] }}"><i class="fa fa-retweet"></i>  Retweets - {{ retweets_count0[count0[0]] }}</a></b> </button>
+          <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/followers"> Followers - {{ follower_count0[count0[0]] }}</a></b></button>
+          <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/following"> Following - {{ following_count0[count0[0]] }}</a></b></button>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name0[count0[0]] }}/status/{{ tweet_id0[count0[0]] }}"><i class="fa fa-envelope"></i> &nbsp;Direct Message </a></b> </button>
+            {% if count0.append(count0.pop() + 1) %} {% endif %}
+      </div>
+          {% endfor %}
+        </div>
+
+
+
+        <div id="neutral">
+          {% set count2 = [0] %}
+          {% for sentiment_text2_element in sentiment_text2 %}
+          <div class="w3-container w3-card w3-white w3-round w3-margin"  style="display:block;"><br>
+              <div style="background: #e6ffff;padding-top:10px;padding-left:10px;padding-right:10px;padding-bottom:2px;">
+            <img src="{{ image2[count2[0]] }}" alt="Smiley face" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <span  class="w3-right w3-opacity">{{ creationdate2[count2[0]] }}</span>
+            <h5 ><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/status/{{ tweet_id2[count2[0]] }}">   {{ user_name2[count2[0]] }} </a></h5>
+            <span class="w3-right w3-opacity">Polarity : {{ polarity2[count2[0]]*100 }}%</span>
+
+            <!--<hr class="w3-clear">-->
+          </div>
+            <p>{{ sentiment_text2_element }}</p>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/status/{{ tweet_id2[count2[0]] }}"> <i class="fa fa-heart"></i>  Likes - {{ favourite_count2[count2[0]] }}</a></b></button>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/status/{{ tweet_id2[count2[0]] }}"> <i class="fa fa-retweet"></i>  Retweets - {{ retweets_count2[count2[0]] }}</a></b> </button>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/followers"> Followers - {{ follower_count2[count2[0]] }}</a></button></b>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/following"> Following - {{ following_count2[count2[0]] }}</a></button></b>
+            <button type="button" class="w3-button w3-theme-d2 w3-small w3-margin-bottom"><b><a style="text-decoration:none;" target="_blank"  href="https://twitter.com/{{ user_name2[count2[0]] }}/status/{{ tweet_id2[count2[0]] }}"><i class="fa fa-envelope"></i> &nbsp;Direct Message </a></b> </button>
+              {% if count2.append(count2.pop() + 1) %} {% endif %}
+        </div>
+            {% endfor %}
+          </div>
+
+
+
+
+
+    <!-- End Middle Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-col m2">
+
+      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+        <p>ADS</p>
+      </div>
+      <br>
+
+      <div class="w3-card w3-round w3-white w3-center">
+        <p> <iframe height="1000px" width="100%" name="iframe_a" src="https://en.wikipedia.org/wiki/{{ topic }}"></iframe> </p>
+      </div>
+      <br>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer>
+  <div class="w3-bottom">
+<div class=" w3-right-align w3-small">
+<a href="#topic" class="w3-button w3-blue-grey"><i class="fa fa-arrow-up "></i> &nbsp;Top</a>
+</div>
+</footer>
+
+<footer class="w3-container w3-center w3-margin-center w3-theme-d5 w3-padding-64 w3-opacity-off w3-hover-opacity-on">
+  <a href="#topic" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by JPMorgan Team</a></p>
+</footer>
+
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
