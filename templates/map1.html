@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/leaflet.markercluster-src.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_75b60784b4b34f78b728d570c7a747e5 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_75b60784b4b34f78b728d570c7a747e5" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var southWest = L.latLng(-90, -180);
+                var northEast = L.latLng(90, 180);
+                var bounds = L.latLngBounds(southWest, northEast);
+            
+
+            var map_75b60784b4b34f78b728d570c7a747e5 = L.map(
+                                  'map_75b60784b4b34f78b728d570c7a747e5',
+                                  {center: [38.58,-99.09],
+                                  zoom: 2,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_ebb9eb1fec904a6297e3317edddd4382 = L.tileLayer(
+                'https://{s}.tiles.mapbox.com/v3/mapbox.world-bright/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    continuousWorld: false,
+                    noWrap: false,
+                    attribution: 'Map tiles by <a href="http://www.mapbox.com/m">Mapbox</a> Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
+                    detectRetina: false
+                    }
+                ).addTo(map_75b60784b4b34f78b728d570c7a747e5);
+
+        
+    
+            var feature_group_25d4be7064a04061b65199997996f9c7 = L.featureGroup(
+                ).addTo(map_75b60784b4b34f78b728d570c7a747e5);
+        
+    
+
+            var marker_b1898db24b954015a6cc4b5bdcd858f7 = L.marker(
+                [51.5073219,-0.1276474],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_59361c22086b4888b11382a318672f11 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b1898db24b954015a6cc4b5bdcd858f7.setIcon(icon_59361c22086b4888b11382a318672f11);
+            
+    
+            var popup_1b730f83a8ed47f19e10bd60c21a649f = L.popup({maxWidth: '300'});
+
+            
+                var html_2ae430b1d4d14350860cff77f6271592 = $('<div id="html_2ae430b1d4d14350860cff77f6271592" style="width: 100.0%; height: 100.0%;">London ...............RT  LGBTworld  via  gaystarnews India bans Love  Simon from cinemas on the day of its planned release https   t co ge mqDDtJg</div>')[0];
+                popup_1b730f83a8ed47f19e10bd60c21a649f.setContent(html_2ae430b1d4d14350860cff77f6271592);
+            
+
+            marker_b1898db24b954015a6cc4b5bdcd858f7.bindPopup(popup_1b730f83a8ed47f19e10bd60c21a649f);
+
+            
+        
+    
+
+            var marker_dae5c011caf64be58c78572225e3692d = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_8efbe0a305414698acd55fdcc924d024 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dae5c011caf64be58c78572225e3692d.setIcon(icon_8efbe0a305414698acd55fdcc924d024);
+            
+    
+            var popup_66c5ab8f57e84c03b2bbed9b8ffcf3ca = L.popup({maxWidth: '300'});
+
+            
+                var html_cbb5350790d442778c4f0851a2e815dd = $('<div id="html_cbb5350790d442778c4f0851a2e815dd" style="width: 100.0%; height: 100.0%;">India ...............RT  BloombergQuint   RBIPolicy   India s Monetary Policy Committee raises repo rate for the first time in over   years  also hikes reverse </div>')[0];
+                popup_66c5ab8f57e84c03b2bbed9b8ffcf3ca.setContent(html_cbb5350790d442778c4f0851a2e815dd);
+            
+
+            marker_dae5c011caf64be58c78572225e3692d.bindPopup(popup_66c5ab8f57e84c03b2bbed9b8ffcf3ca);
+
+            
+        
+    
+
+            var marker_96ae65e1e06440ee841477565c5045e6 = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_2886ba6b35fb4f1ba6827c279e6f8091 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_96ae65e1e06440ee841477565c5045e6.setIcon(icon_2886ba6b35fb4f1ba6827c279e6f8091);
+            
+    
+            var popup_7b70b6c7982e40119d8bb1177e0ddb8a = L.popup({maxWidth: '300'});
+
+            
+                var html_e9c297daa69744ff8bc82cb05dbc8eab = $('<div id="html_e9c297daa69744ff8bc82cb05dbc8eab" style="width: 100.0%; height: 100.0%;">India ............... Narendra Modi touring world  Amit Shah country   Shiv Sena mocks BJP s Sampark Abhiyan  Read more here  https   t co fHQWEGbXeG</div>')[0];
+                popup_7b70b6c7982e40119d8bb1177e0ddb8a.setContent(html_e9c297daa69744ff8bc82cb05dbc8eab);
+            
+
+            marker_96ae65e1e06440ee841477565c5045e6.bindPopup(popup_7b70b6c7982e40119d8bb1177e0ddb8a);
+
+            
+        
+    
+
+            var marker_57373570f54b4d899c48eb6057672d8e = L.marker(
+                [50.979978,11.7112262],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_ceac8a91455143359de2cb295f44ec1e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_57373570f54b4d899c48eb6057672d8e.setIcon(icon_ceac8a91455143359de2cb295f44ec1e);
+            
+    
+            var popup_cad2c2f901d94c0ab52c7ae1d631a4d9 = L.popup({maxWidth: '300'});
+
+            
+                var html_5708a2e269d347d9ab27569808c0449e = $('<div id="html_5708a2e269d347d9ab27569808c0449e" style="width: 100.0%; height: 100.0%;">ExoPlanet ...............RT  OverlordEXO  Top Countries Who Mention  B hundred Hyun  Since His Twitter Account Made    st   USA  nd   Indonesia  rd   India Philippi </div>')[0];
+                popup_cad2c2f901d94c0ab52c7ae1d631a4d9.setContent(html_5708a2e269d347d9ab27569808c0449e);
+            
+
+            marker_57373570f54b4d899c48eb6057672d8e.bindPopup(popup_cad2c2f901d94c0ab52c7ae1d631a4d9);
+
+            
+        
+    
+
+            var marker_b9ba0e9abbdf44d29d8c9aa72ab7d1cd = L.marker(
+                [13.934226,121.6069019],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_ad57d841d38d43f4888be8f744f029eb = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b9ba0e9abbdf44d29d8c9aa72ab7d1cd.setIcon(icon_ad57d841d38d43f4888be8f744f029eb);
+            
+    
+            var popup_9ba1163c1cf3402e8742a4e57e83c3ad = L.popup({maxWidth: '300'});
+
+            
+                var html_d1646c93eefe49e8844149bf09782614 = $('<div id="html_d1646c93eefe49e8844149bf09782614" style="width: 100.0%; height: 100.0%;">blockchain ...............RT  bitcoinagile  India gets its first interest rate hike in   years  bitcoin  crypto  cryptocurrency  btc https   t co RnoN  YbIw https    </div>')[0];
+                popup_9ba1163c1cf3402e8742a4e57e83c3ad.setContent(html_d1646c93eefe49e8844149bf09782614);
+            
+
+            marker_b9ba0e9abbdf44d29d8c9aa72ab7d1cd.bindPopup(popup_9ba1163c1cf3402e8742a4e57e83c3ad);
+
+            
+        
+    
+
+            var marker_535c57f5a56045a1848802f66139787e = L.marker(
+                [53.45733965,-2.22695880505223],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_f3da305256e444c1b23fd4a060d0b1e7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_535c57f5a56045a1848802f66139787e.setIcon(icon_f3da305256e444c1b23fd4a060d0b1e7);
+            
+    
+            var popup_9a355d1676cb420391c8d00a7b678520 = L.popup({maxWidth: '300'});
+
+            
+                var html_2e6782362a34411ba36e138eebb218bc = $('<div id="html_2e6782362a34411ba36e138eebb218bc" style="width: 100.0%; height: 100.0%;">Worldwide ...............New post  H D Kumaraswamy ministry in Karnataka expanded     ministers inducted   India News  has been published on  https   t co aogVKmJdmt</div>')[0];
+                popup_9a355d1676cb420391c8d00a7b678520.setContent(html_2e6782362a34411ba36e138eebb218bc);
+            
+
+            marker_535c57f5a56045a1848802f66139787e.bindPopup(popup_9a355d1676cb420391c8d00a7b678520);
+
+            
+        
+    
+
+            var marker_ef860e99cb1a42e9864445fea7c56aa9 = L.marker(
+                [53.4250605,27.6971358],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_db1e373ed8de44c0ac81a5592638614a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ef860e99cb1a42e9864445fea7c56aa9.setIcon(icon_db1e373ed8de44c0ac81a5592638614a);
+            
+    
+            var popup_f306c32807104e9d9a04de0de7cf1bc7 = L.popup({maxWidth: '300'});
+
+            
+                var html_a18ee9d1d24346d09ae1c11a0e0e0372 = $('<div id="html_a18ee9d1d24346d09ae1c11a0e0e0372" style="width: 100.0%; height: 100.0%;">Belarus ...............Prostitutes better than govt officials because  they work after getting paid   says Indian lawmaker   RT World News https   t co n Ac D  wE</div>')[0];
+                popup_f306c32807104e9d9a04de0de7cf1bc7.setContent(html_a18ee9d1d24346d09ae1c11a0e0e0372);
+            
+
+            marker_ef860e99cb1a42e9864445fea7c56aa9.bindPopup(popup_f306c32807104e9d9a04de0de7cf1bc7);
+
+            
+        
+    
+
+            var marker_7256a7ebc495441081053621cca2ce0d = L.marker(
+                [56.0000002,103.9999998],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_888e8a23ff5840d7ba60945689438e62 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7256a7ebc495441081053621cca2ce0d.setIcon(icon_888e8a23ff5840d7ba60945689438e62);
+            
+    
+            var popup_76f9476daff542ca9d8e968e1c48ed3c = L.popup({maxWidth: '300'});
+
+            
+                var html_7f353abec3b64564893bfea8b6738ccd = $('<div id="html_7f353abec3b64564893bfea8b6738ccd" style="width: 100.0%; height: 100.0%;">Asia ...............India hikes interest rates for first time in four years https   t co CAdl AV  W  Asia  Business</div>')[0];
+                popup_76f9476daff542ca9d8e968e1c48ed3c.setContent(html_7f353abec3b64564893bfea8b6738ccd);
+            
+
+            marker_7256a7ebc495441081053621cca2ce0d.bindPopup(popup_76f9476daff542ca9d8e968e1c48ed3c);
+
+            
+        
+    
+
+            var marker_e6741f65f8734d328d24c5ee73c20001 = L.marker(
+                [51.5073219,-0.1276474],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_25d4be7064a04061b65199997996f9c7);
+            
+    
+
+                var icon_9799211907db44c2ba5ca598aa1372e1 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e6741f65f8734d328d24c5ee73c20001.setIcon(icon_9799211907db44c2ba5ca598aa1372e1);
+            
+    
+            var popup_4c79ec9cd74a44f4a7efd015147eb228 = L.popup({maxWidth: '300'});
+
+            
+                var html_70bdf7e7728a4445b3b55987067ec5c4 = $('<div id="html_70bdf7e7728a4445b3b55987067ec5c4" style="width: 100.0%; height: 100.0%;">London ...............via  gaystarnews India bans Love  Simon from cinemas on the day of its planned release https   t co ge mqDDtJg</div>')[0];
+                popup_4c79ec9cd74a44f4a7efd015147eb228.setContent(html_70bdf7e7728a4445b3b55987067ec5c4);
+            
+
+            marker_e6741f65f8734d328d24c5ee73c20001.bindPopup(popup_4c79ec9cd74a44f4a7efd015147eb228);
+
+            
+        
+    
+            var feature_group_b460facee09a45a090699a35b8d72727 = L.featureGroup(
+                ).addTo(map_75b60784b4b34f78b728d570c7a747e5);
+        
+    
+
+            var marker_46e56e783fd249d0bc569a5577bbe184 = L.marker(
+                [25.2258151,55.1830144241155],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_b460facee09a45a090699a35b8d72727);
+            
+    
+
+                var icon_0c334c6b690147fe907f49d3663da060 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_46e56e783fd249d0bc569a5577bbe184.setIcon(icon_0c334c6b690147fe907f49d3663da060);
+            
+    
+            var popup_9c4eda8633124f948e73879167a2474f = L.popup({maxWidth: '300'});
+
+            
+                var html_dd4a466ab98b411b9438f919377d6c21 = $('<div id="html_dd4a466ab98b411b9438f919377d6c21" style="width: 100.0%; height: 100.0%;">Maldives ...............RT  AzMyst  Driven by hunger  a fox tried to reach some grapes hanging high on the vine but was unable to  although he leaped with all his </div>')[0];
+                popup_9c4eda8633124f948e73879167a2474f.setContent(html_dd4a466ab98b411b9438f919377d6c21);
+            
+
+            marker_46e56e783fd249d0bc569a5577bbe184.bindPopup(popup_9c4eda8633124f948e73879167a2474f);
+
+            
+        
+    
+
+            var marker_30681a8b742a440d956002b5458c6103 = L.marker(
+                [33.4690855,72.1187625],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_b460facee09a45a090699a35b8d72727);
+            
+    
+
+                var icon_c184a6344b6f4e8aa5287bb3ec6c6173 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_30681a8b742a440d956002b5458c6103.setIcon(icon_c184a6344b6f4e8aa5287bb3ec6c6173);
+            
+    
+            var popup_963bfba1bda94e4987a441bbf8e20a08 = L.popup({maxWidth: '300'});
+
+            
+                var html_3c6035d08a654048abe60d36191f2ce4 = $('<div id="html_3c6035d08a654048abe60d36191f2ce4" style="width: 100.0%; height: 100.0%;">Haveli ...............RT  Chopdasaab  PR team of  priyankachopra forced me to delete Tweet or face suspension when called out her hypocrisy  But now that she has </div>')[0];
+                popup_963bfba1bda94e4987a441bbf8e20a08.setContent(html_3c6035d08a654048abe60d36191f2ce4);
+            
+
+            marker_30681a8b742a440d956002b5458c6103.bindPopup(popup_963bfba1bda94e4987a441bbf8e20a08);
+
+            
+        
+    
+
+            var marker_a6f13382c3044326994fce1a83dc0ad5 = L.marker(
+                [19.1334321,72.8882172],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_b460facee09a45a090699a35b8d72727);
+            
+    
+
+                var icon_da41e21edafb416da8c0530e06a5e2d5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a6f13382c3044326994fce1a83dc0ad5.setIcon(icon_da41e21edafb416da8c0530e06a5e2d5);
+            
+    
+            var popup_52d57ccfd44148298209de4e524bcc5b = L.popup({maxWidth: '300'});
+
+            
+                var html_a49b9b04706346209bfae1a8a444cdb7 = $('<div id="html_a49b9b04706346209bfae1a8a444cdb7" style="width: 100.0%; height: 100.0%;">Mumbai ...............RT  davidfrawleyved  There is no other country in the world where the Catholic Church is so active interfering in politics than India  not </div>')[0];
+                popup_52d57ccfd44148298209de4e524bcc5b.setContent(html_a49b9b04706346209bfae1a8a444cdb7);
+            
+
+            marker_a6f13382c3044326994fce1a83dc0ad5.bindPopup(popup_52d57ccfd44148298209de4e524bcc5b);
+
+            
+        
+    
+            var feature_group_c0c32dd280c84b33a2fbae65b886a7f4 = L.featureGroup(
+                ).addTo(map_75b60784b4b34f78b728d570c7a747e5);
+        
+    
+
+            var marker_1c774f323eed4a019ced3978dcae39ea = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_de952787fabe47bc953d9bed78bdd12f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1c774f323eed4a019ced3978dcae39ea.setIcon(icon_de952787fabe47bc953d9bed78bdd12f);
+            
+    
+            var popup_3013a37f97c946b6a2e2710dee4fcebf = L.popup({maxWidth: '300'});
+
+            
+                var html_9e90660d0c3441aea712ff2f2c538c04 = $('<div id="html_9e90660d0c3441aea712ff2f2c538c04" style="width: 100.0%; height: 100.0%;">India ................RT  TrueIndology  In      the same Archdiocese of Goa and Daman fought tooth and nail against the integration of Goa into India   They prea </div>')[0];
+                popup_3013a37f97c946b6a2e2710dee4fcebf.setContent(html_9e90660d0c3441aea712ff2f2c538c04);
+            
+
+            marker_1c774f323eed4a019ced3978dcae39ea.bindPopup(popup_3013a37f97c946b6a2e2710dee4fcebf);
+
+            
+        
+    
+
+            var marker_ec4472283e04408582a7306989504b54 = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_70477982a80f41408c535bbc1a6f8098 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ec4472283e04408582a7306989504b54.setIcon(icon_70477982a80f41408c535bbc1a6f8098);
+            
+    
+            var popup_9474531479974425abb1f42f7f767bd3 = L.popup({maxWidth: '300'});
+
+            
+                var html_bd46101deb4f4860890554ea4a7d51b0 = $('<div id="html_bd46101deb4f4860890554ea4a7d51b0" style="width: 100.0%; height: 100.0%;">India ................RT  DrGPradhan  When we come here after     years   look at our phones  we will find  Made in Mandsaur  written on it    rahulganhi at Mand </div>')[0];
+                popup_9474531479974425abb1f42f7f767bd3.setContent(html_bd46101deb4f4860890554ea4a7d51b0);
+            
+
+            marker_ec4472283e04408582a7306989504b54.bindPopup(popup_9474531479974425abb1f42f7f767bd3);
+
+            
+        
+    
+
+            var marker_8370e513f72147109be69788a5682af7 = L.marker(
+                [25.3356491,83.0076292],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_9fedde3c74de41ad8f2f89f7d4d73ff3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8370e513f72147109be69788a5682af7.setIcon(icon_9fedde3c74de41ad8f2f89f7d4d73ff3);
+            
+    
+            var popup_aef61a56d9ca4af2a1439a41c8aebd7e = L.popup({maxWidth: '300'});
+
+            
+                var html_b01a29806ee34167b7329c064b2a8938 = $('<div id="html_b01a29806ee34167b7329c064b2a8938" style="width: 100.0%; height: 100.0%;">varanasi ................RT  narendramodi  Through a mass movement  let us celebrate innovation and out of the box thinking  If you know about the life journey of a </div>')[0];
+                popup_aef61a56d9ca4af2a1439a41c8aebd7e.setContent(html_b01a29806ee34167b7329c064b2a8938);
+            
+
+            marker_8370e513f72147109be69788a5682af7.bindPopup(popup_aef61a56d9ca4af2a1439a41c8aebd7e);
+
+            
+        
+    
+
+            var marker_968b09d0ef1a45ce88de07e702031170 = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_66bd7e4dfa0a462ebe1987500c0e8019 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_968b09d0ef1a45ce88de07e702031170.setIcon(icon_66bd7e4dfa0a462ebe1987500c0e8019);
+            
+    
+            var popup_40f0062277b54df48893f3428f95921b = L.popup({maxWidth: '300'});
+
+            
+                var html_7f2502dbe9ca4cf6aeb6ec7ca4a7d2a9 = $('<div id="html_7f2502dbe9ca4cf6aeb6ec7ca4a7d2a9" style="width: 100.0%; height: 100.0%;">India ................                                                            https   t co VqLxkIGdGz</div>')[0];
+                popup_40f0062277b54df48893f3428f95921b.setContent(html_7f2502dbe9ca4cf6aeb6ec7ca4a7d2a9);
+            
+
+            marker_968b09d0ef1a45ce88de07e702031170.bindPopup(popup_40f0062277b54df48893f3428f95921b);
+
+            
+        
+    
+
+            var marker_8c0bbc3f411c4a27905dde5ffa377b21 = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_fbbdd28d1950452387dc6663ebb38b80 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8c0bbc3f411c4a27905dde5ffa377b21.setIcon(icon_fbbdd28d1950452387dc6663ebb38b80);
+            
+    
+            var popup_04864ed53bf546a883ac994995ae6a5c = L.popup({maxWidth: '300'});
+
+            
+                var html_53b8e5d1931a4986b306677596e5d157 = $('<div id="html_53b8e5d1931a4986b306677596e5d157" style="width: 100.0%; height: 100.0%;">India ................RT  NSELfight   Milind     patriotcheated  Thinkerks  kanimozhi  OppressedHindu  Janamejayan  Swamy    Sheetal tweets  RituRathaur  DrBhava </div>')[0];
+                popup_04864ed53bf546a883ac994995ae6a5c.setContent(html_53b8e5d1931a4986b306677596e5d157);
+            
+
+            marker_8c0bbc3f411c4a27905dde5ffa377b21.bindPopup(popup_04864ed53bf546a883ac994995ae6a5c);
+
+            
+        
+    
+
+            var marker_87174f75d7c049b19f436b73a9be5c1a = L.marker(
+                [18.5203062,73.8543185],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_ba5c8cf08f9a4dd0bfe53c7aaa7b7738 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_87174f75d7c049b19f436b73a9be5c1a.setIcon(icon_ba5c8cf08f9a4dd0bfe53c7aaa7b7738);
+            
+    
+            var popup_6d32e5da955045a3944f35ee122c3d78 = L.popup({maxWidth: '300'});
+
+            
+                var html_855d77ca7ea146c7a16697e548a956d7 = $('<div id="html_855d77ca7ea146c7a16697e548a956d7" style="width: 100.0%; height: 100.0%;">Pune ................RT  AdityaRajKaul  Liar Arundhati Roy caught red handed  She portrays as if  Kathua rape case  has happened in  Kashmir  which is in fact f </div>')[0];
+                popup_6d32e5da955045a3944f35ee122c3d78.setContent(html_855d77ca7ea146c7a16697e548a956d7);
+            
+
+            marker_87174f75d7c049b19f436b73a9be5c1a.bindPopup(popup_6d32e5da955045a3944f35ee122c3d78);
+
+            
+        
+    
+
+            var marker_75e8fa9e5c64459e9945ac9e9dfb66dc = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_ea6eb384c1614ca3abea4c5bfa0f17a3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_75e8fa9e5c64459e9945ac9e9dfb66dc.setIcon(icon_ea6eb384c1614ca3abea4c5bfa0f17a3);
+            
+    
+            var popup_b2a0a3b14ab845678ec69fd0bb9227d2 = L.popup({maxWidth: '300'});
+
+            
+                var html_939fe2146a574ed4be4b0b7f15e9a4b2 = $('<div id="html_939fe2146a574ed4be4b0b7f15e9a4b2" style="width: 100.0%; height: 100.0%;">India ................   years on  a brief history about  OperationBluestar  and why it was carried out https   t co FP xlev WQ https   t co  ixA FgpFZ</div>')[0];
+                popup_b2a0a3b14ab845678ec69fd0bb9227d2.setContent(html_939fe2146a574ed4be4b0b7f15e9a4b2);
+            
+
+            marker_75e8fa9e5c64459e9945ac9e9dfb66dc.bindPopup(popup_b2a0a3b14ab845678ec69fd0bb9227d2);
+
+            
+        
+    
+
+            var marker_5f95614d1f184aeca65fb9b0b45dce08 = L.marker(
+                [12.9791198,77.5912997],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_be3b531681cd4693ac8bb426d2139478 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5f95614d1f184aeca65fb9b0b45dce08.setIcon(icon_be3b531681cd4693ac8bb426d2139478);
+            
+    
+            var popup_547d920201c34864a95f1bbdcc8e89d8 = L.popup({maxWidth: '300'});
+
+            
+                var html_767f6ca995c24a8bb5bc7df4fa0af3e7 = $('<div id="html_767f6ca995c24a8bb5bc7df4fa0af3e7" style="width: 100.0%; height: 100.0%;">Bangalore ................RT  dpradhanbjp  Further we also discussed about Govt  of India s aim to develop skill based ecosystem in India for which sought cooperatio </div>')[0];
+                popup_547d920201c34864a95f1bbdcc8e89d8.setContent(html_767f6ca995c24a8bb5bc7df4fa0af3e7);
+            
+
+            marker_5f95614d1f184aeca65fb9b0b45dce08.bindPopup(popup_547d920201c34864a95f1bbdcc8e89d8);
+
+            
+        
+    
+
+            var marker_dcb3ef43af534394a1eef4a2851a1179 = L.marker(
+                [25.2258151,55.1830144241155],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_fc4d1ac84f124fa582e34332381bf738 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dcb3ef43af534394a1eef4a2851a1179.setIcon(icon_fc4d1ac84f124fa582e34332381bf738);
+            
+    
+            var popup_7a10526c533c4cf582b53dfe288dbf65 = L.popup({maxWidth: '300'});
+
+            
+                var html_babc7f4baed54f6580db83e894fad764 = $('<div id="html_babc7f4baed54f6580db83e894fad764" style="width: 100.0%; height: 100.0%;">Maldives ................PGL  ahmed nihan ah ihaanethikohlaafa heevaneetha maamolhuthakeh libidhaane kamah  thiyahen ukaa theeruthakun ahare  https   t co  TJndSpB  </div>')[0];
+                popup_7a10526c533c4cf582b53dfe288dbf65.setContent(html_babc7f4baed54f6580db83e894fad764);
+            
+
+            marker_dcb3ef43af534394a1eef4a2851a1179.bindPopup(popup_7a10526c533c4cf582b53dfe288dbf65);
+
+            
+        
+    
+
+            var marker_34822324414c433e801d7e6728773b1c = L.marker(
+                [22.3511148,78.6677428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_81307bf6aea44df9aac7181182140b9f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_34822324414c433e801d7e6728773b1c.setIcon(icon_81307bf6aea44df9aac7181182140b9f);
+            
+    
+            var popup_f33cb7353d3c46dfa73425292e1d8e40 = L.popup({maxWidth: '300'});
+
+            
+                var html_c15906ab1e1b4c488a323af73ac60ee9 = $('<div id="html_c15906ab1e1b4c488a323af73ac60ee9" style="width: 100.0%; height: 100.0%;">India ................RT  nselrevenge   NSELfight  Milind     patriotcheated  Thinkerks  kanimozhi  OppressedHindu  Janamejayan  Swamy    Sheetal tweets  RituRat </div>')[0];
+                popup_f33cb7353d3c46dfa73425292e1d8e40.setContent(html_c15906ab1e1b4c488a323af73ac60ee9);
+            
+
+            marker_34822324414c433e801d7e6728773b1c.bindPopup(popup_f33cb7353d3c46dfa73425292e1d8e40);
+
+            
+        
+    
+
+            var marker_8b11e02aa9bd4b04a7578e1f93192a85 = L.marker(
+                [54.7023545,-3.2765753],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_42dd574f25ae483b98e1f9b76ec0b7a3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8b11e02aa9bd4b04a7578e1f93192a85.setIcon(icon_42dd574f25ae483b98e1f9b76ec0b7a3);
+            
+    
+            var popup_9a486f5fc348404a96c44186106bef46 = L.popup({maxWidth: '300'});
+
+            
+                var html_012e1ab28ea5426e8d5b6bc05afebda9 = $('<div id="html_012e1ab28ea5426e8d5b6bc05afebda9" style="width: 100.0%; height: 100.0%;">UK ................A mother in India has gone to court to try and force her trans daughter into psychiatric care  https   t co E aEB  aEk</div>')[0];
+                popup_9a486f5fc348404a96c44186106bef46.setContent(html_012e1ab28ea5426e8d5b6bc05afebda9);
+            
+
+            marker_8b11e02aa9bd4b04a7578e1f93192a85.bindPopup(popup_9a486f5fc348404a96c44186106bef46);
+
+            
+        
+    
+
+            var marker_bde41db20c174b39a65bb6cd37e62025 = L.marker(
+                [19.3025562,73.0588072],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_c7d73fd63a8e4687ba8b26ef73738481 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bde41db20c174b39a65bb6cd37e62025.setIcon(icon_c7d73fd63a8e4687ba8b26ef73738481);
+            
+    
+            var popup_ea879470be6244afbf0812031491b05a = L.popup({maxWidth: '300'});
+
+            
+                var html_53051c83e996424698c7a973b4a4b172 = $('<div id="html_53051c83e996424698c7a973b4a4b172" style="width: 100.0%; height: 100.0%;">Bhiwandi ................RT  narendramodi  Through a mass movement  let us celebrate innovation and out of the box thinking  If you know about the life journey of a </div>')[0];
+                popup_ea879470be6244afbf0812031491b05a.setContent(html_53051c83e996424698c7a973b4a4b172);
+            
+
+            marker_bde41db20c174b39a65bb6cd37e62025.bindPopup(popup_ea879470be6244afbf0812031491b05a);
+
+            
+        
+    
+
+            var marker_01c6406ae0484c5a811301f9b2e9f5ca = L.marker(
+                [43.7283874,-79.34914879325],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_7cd65f6eb7f14dc9b3a42ff897474a86 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_01c6406ae0484c5a811301f9b2e9f5ca.setIcon(icon_7cd65f6eb7f14dc9b3a42ff897474a86);
+            
+    
+            var popup_85676e69e7d44ded9305733f5403cc56 = L.popup({maxWidth: '300'});
+
+            
+                var html_eeb2b6868ff24a35bb280d885f87ac24 = $('<div id="html_eeb2b6868ff24a35bb280d885f87ac24" style="width: 100.0%; height: 100.0%;">Global ................RT  churumuri  The world according to the presidents of India s two biggest political parties  in two tweets  https   t co qY ACHpsOD</div>')[0];
+                popup_85676e69e7d44ded9305733f5403cc56.setContent(html_eeb2b6868ff24a35bb280d885f87ac24);
+            
+
+            marker_01c6406ae0484c5a811301f9b2e9f5ca.bindPopup(popup_85676e69e7d44ded9305733f5403cc56);
+
+            
+        
+    
+
+            var marker_32235f860cd74d0da593ca4db5f21478 = L.marker(
+                [1.2904753,103.8520359],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_c0c32dd280c84b33a2fbae65b886a7f4);
+            
+    
+
+                var icon_845b37f2c1b644f79b35c829dd970e8e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_32235f860cd74d0da593ca4db5f21478.setIcon(icon_845b37f2c1b644f79b35c829dd970e8e);
+            
+    
+            var popup_c938b4b4905d4eac92dec0ba57bc28be = L.popup({maxWidth: '300'});
+
+            
+                var html_c2ba7fa8a35842b1b33686e2bc18a303 = $('<div id="html_c2ba7fa8a35842b1b33686e2bc18a303" style="width: 100.0%; height: 100.0%;">Singapore ................RT  noconversion  Kesalingayapalli  in Andhra  has banned Christian Missionaries     altogether      Every Village in INDIA needs to do thi </div>')[0];
+                popup_c938b4b4905d4eac92dec0ba57bc28be.setContent(html_c2ba7fa8a35842b1b33686e2bc18a303);
+            
+
+            marker_32235f860cd74d0da593ca4db5f21478.bindPopup(popup_c938b4b4905d4eac92dec0ba57bc28be);
+
+            
+        
+    
+            var layer_control_c7ef3eef880549be9c95e4af2b0b2915 = {
+                base_layers : { "mapboxbright" : tile_layer_ebb9eb1fec904a6297e3317edddd4382, },
+                overlays : { "Positive" : feature_group_25d4be7064a04061b65199997996f9c7,"Negative" : feature_group_b460facee09a45a090699a35b8d72727,"Neutral" : feature_group_c0c32dd280c84b33a2fbae65b886a7f4, }
+                };
+            L.control.layers(
+                layer_control_c7ef3eef880549be9c95e4af2b0b2915.base_layers,
+                layer_control_c7ef3eef880549be9c95e4af2b0b2915.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_75b60784b4b34f78b728d570c7a747e5);
+        
+</script>
