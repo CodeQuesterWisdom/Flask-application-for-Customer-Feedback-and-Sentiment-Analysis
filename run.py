@@ -127,8 +127,8 @@ def index():
             i, p, d = s.partition('.')
             return '.'.join([i, (d+'0'*n)[:n]])
 			
-		preprocessed_words=[]
-		clean_test_reviews = []
+	preprocessed_words=[]
+	clean_test_reviews = []
         
         def preprocessing(raw_data):
             review_text = BeautifulSoup(raw_data,"html5lib").get_text() #removes html tags
@@ -144,9 +144,9 @@ def index():
 			return(" ".join(meaningful_words ))
 			
 		
-		for tweet in test_data:
+	for tweet in test_data:
 			
-			clean_test_reviews.append(preprocessing(tweet.text)
+		clean_test_reviews.append(preprocessing(tweet.text))
 
 
         top_words1=[]
@@ -160,10 +160,9 @@ def index():
 			
 	
 	
-		test_data_features = CountVectorizer(vocabulary=final_words)
-		test_data_features= test_data_features.fit_transform(clean_test_reviews).toarray()
-        
-		result = forest.predict(test_data_features)
+	test_data_features = CountVectorizer(vocabulary=final_words)
+	test_data_features= test_data_features.fit_transform(clean_test_reviews).toarray()
+	result = forest.predict(test_data_features)
 		
 
         for tweet in test_data:
